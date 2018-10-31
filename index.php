@@ -95,7 +95,7 @@
  				 							<i class="glyphicon glyphicon-earphone accent"></i>
 											</div>
 											<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
- 				 							(+632) 831 8855
+ 				 							831 8855
 											</div>
 
 											<!-- <p><i class="glyphicon glyphicon-earphone"></i>&nbsp;(+632) 831 8855 </p> -->
