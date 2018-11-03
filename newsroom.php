@@ -28,11 +28,11 @@
 
 
 			<!-- Modal -->
-			<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div id="myModal" class="modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 			  <div class="modal-content">
 			      <div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<!-- <a href="index.php"><button type="button" class="close">&times;</button></a> -->
 			          <h4 class="modal-title">Disclaimer</h4>
 			      </div>
 			      <div class="modal-body"><p><strong>THIS SECTION OF THE WEBSITE CONTAINS ANNOUNCEMENTS, DOCUMENTS AND INFORMATION (THE “INFORMATION”) PUBLISHED BY STROBE RELATING TO THE [POSSIBLE] OFFER IN COMPLIANCE WITH THE CITY CODE ON TAKEOVERS AND MERGERS (THE “CODE”). THE OFFER CANNOT BE VALIDLY ACCEPTED BY BEAM SHAREHOLDERS OR ANY OTHER PERSONS BY MEANS OF DOWNLOADING A COPY OF THE OFFER DOCUMENTS FROM THIS WEBSITE.
@@ -61,7 +61,9 @@
 
 			        <p>I have read and understood the disclaimer and terms and conditions set out above.  I understand that it may affect my rights.  I agree to be bound by its terms.  I confirm that I am permitted to proceed to this part of the site.</p></div>
 			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">I agree</button>
+							<a href="index.php"><button type="button" class="btn btn-secondary">< Back</button></a>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Agree</button>
+
 			      </div>
 			  </div>
 			</div>

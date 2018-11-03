@@ -28,7 +28,7 @@
 					</div>
 
 
-					<h4 class="aligncenter fontaccent">We build & Operate – Projects we completed with pride</h4>
+					<h4 class="aligncenter fontaccent">We build & Operate – Management Track Record for a Previous Incorporation of CEPA</h4>
 						<table class="table table-hover table-responsive">
 							<thead>
 								<tr>
@@ -102,6 +102,12 @@
 									<td>1,320 MW</td>
 									<!-- <td>USD 1,800 Million</td> -->
 									<td>1999</td>
+								</tr>
+								<tr>
+									<td></td>
+									<th>We build & Operate – Management Track Record for a Previous Incorporation of CEPA</th>
+								<td></td>
+								<td></td>
 								</tr>
 								<tr>
 										<th>Previous Plants Completed</th>

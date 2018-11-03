@@ -3,12 +3,13 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 footer-brand">
           <a href="index.php"><img src="img/logo3.svg" alt="footer logo" class="img-fluid center-block" ></a>
-            <p class="aligncenter">© Consolidated Electric Power Asia LTD. 2018</p>
+            <p class="aligncenter">© Consolidated Electric Power Asia International LTD. 2018</p>
       </div>
       <div class="col-xs-12 col-sm-2 col-md-4 footer-nav">
           <h4>Navigation</h4>
                 <ul class="list">
                   <li><a href="index.php">HOME</a></li>
+                  <li><a href="newsroom.php">NEWSROOM</a></li>
                   <li><a href="about.php">ABOUT US</a></li>
                   <li><a href="projects.php">PROJECTS</a></li>
                   <li><a href="services.php">SERVICES</a></li>

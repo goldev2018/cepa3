@@ -31,15 +31,17 @@
 								 <div class="col-sm-8 col-lg-8">
 									 <h3>THE COMPANY</h3>
 									 <div class="solidline"></div>
-								 	<p>Consolidated Electric Power Asia Limited (CEPA) was
-										<!--#echo var="DATE_LOCAL" -->  established for the purpose of assisting developing countries with high electricity demand. CEPA built up to become the largest private power company in Asia at that time, with projects in China, the Philippines, Indonesia and India. CEPA constructs, develops, ﬁnances and operates power plants. CEPA provides on-site operation and maintenance services to ensure smooth and efﬁcient operations of power stations and power barges.</p>
+								 	<p>Consolidated Electric Power Asia International Limited (CEPA) was
+										<!--#echo var="DATE_LOCAL" -->  established for the purpose of assisting developing countries with high electricity demand. Management built a previous incorporation of CEPA to become the largest private power company in Asia at the time, with projects in China, the Philippines, Indonesia and India. Today, CEPA and its associated companies construct, develop, finance and operate power plants. CEPA provides on-site operation and maintenance services to ensure smooth and efﬁcient operation of power stations and power barges.</p>
 
 									<div class="row  ">
 										<div class="col-lg-12">
 											<figure class="figure">
-											  <img src="img/image_assets/img1a.jpg" alt="Pagbilao Coal-Fired Power Station" class="thumbnail img-responsive">
-												<figcaption class="figure-caption"><p class="text-right" style="color:#6D6E70"><small><em>9MW Power Station, Alice Springs, Australia</em></small></p></figcaption>
+											  <img src="img/image_assets/img1b.jpg" alt="Pagbilao Coal-Fired Power Station" class="thumbnail img-responsive">
+												<figcaption class="figure-caption"><p class="text-right" style="color:#6D6E70"><small><em>Sengkang Power Plant 315 MW</em></small></p></figcaption>
 											</figure>
+
+											<h4 style="color:#58585B">CEPA’s predecessor and Management Experience </h4>
 											<p >Hopewell Holding’s power project investments were grouped under Consolidated Electric Power Asia Limited and listed on the Hong Kong Stock Exchange in late 1993, to develop and operate power generation projects throughout Asia. Originally a subsidiary of Hopewell Holding, Slipform Engineering Ltd. and Tileman Group were then put under CEPA. Senior management and executives of the companies were also transferred to the new companies under CEPA.</p>
 											<a href="about.php"><p>Read more</p></a>
 										</div>
@@ -67,7 +69,7 @@
 										<h3>ANNOUNCEMENTS</h3>
 										<div class="solidline"></div>
 										<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
-											<a href="#"><p>Click here for future announcements</p></a>
+											<a href="newsroom.php"><p>Click here for future announcements</p></a>
 										</div>
 									</div>
 
@@ -80,22 +82,24 @@
  				 							<i class="glyphicon glyphicon-map-marker accent"></i>
 											</div>
 											<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
-												Hong Kong Address - <br>
-												Suite 4823, 48th Floor,<br>
-												Sun Hung Kai Centre, 30 Harbour Road,<br>
-												Hong Kong<br>
-												<br>
+
 												Registered Address – <br>
 												Hazelwood Gregory Lane,<br>
 												Durley, Southampton,<br>
-												United Kingdom, SO32 2BS<br><br>
+												United Kingdom, SO32 2BS<br>
+												<br>
+												Hong Kong Address - <br>
+												Suite 4823, 48th Floor,<br>
+												Sun Hung Kai Centre, 30 Harbour Road,<br>
+												Hong Kong<br><br>
+
 											</div>
 
 											<div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
  				 							<i class="glyphicon glyphicon-earphone accent"></i>
 											</div>
 											<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
- 				 							831 8855
+ 				 							(852) 2861 0719
 											</div>
 
 											<!-- <p><i class="glyphicon glyphicon-earphone"></i>&nbsp;(+632) 831 8855 </p> -->
@@ -219,7 +223,7 @@
 							</div> -->
 
 							<div class="col-lg-10 center-block">
-								<p class="text-justify">Mr. Stewart Elliott is the Managing Director and Chief Executive Ofﬁcer of the Company and the Group. The principal activities of CEPA and its subsidiary companies are development & operation of power station projects, civil construction and engineering services, project management & treasury investments.</p>
+								<p class="text-justify">Mr. Stewart Elliott is the Managing Director and Chief Executive Ofﬁcer of the Company and the Group. The principal activities of CEPA and its associated companies are development & operation of power station projects, civil construction and engineering services, project management & treasury investments.</p>
 							</div>
 
 

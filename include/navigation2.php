@@ -11,8 +11,8 @@
    <div class="navbar-collapse collapse">
 
        <ul class="nav navbar-nav" style="padding-top:27px; width: auto;float: right">
-      <li><a href="newsroom.php">NEWSROOM</a></li>
        <li><a href="index.php">HOME</a></li>
+       <li><a href="newsroom.php">NEWSROOM</a></li>
        <li><a href="about.php">ABOUT US</a></li>
        <li class="dropdown">
 								<a href="services.php" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown-toggle" data-delay="0" data-close-others="false">SERVICES<i class="fa fa-angle-down"></i></a>
