@@ -73,7 +73,7 @@
 		</section>
 
 		<section id="featured" class="bg">
-			<div class="container animated fadeIn margintop50">
+			<div id="powerplant" class="container animated fadeIn margintop50">
 					<div class="row" >
 						<div class="col-lg-12">
 							<h4 class="fontaccent">Power Plant Operation and Maintenance (O&M) Project in Pagbilao, Philippines</h4>

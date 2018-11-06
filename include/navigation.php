@@ -15,8 +15,8 @@
        <li class="dropdown">
 								<a href="services.php" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown-toggle" data-delay="0" data-close-others="false">SERVICES<i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown-menu" style="background-color:#DCDFE1">
-                  <li class="botnavborder"><a href="services.php#currentcontract">Current Contract</a></li>
-                  <li class="botnavborder"><a href="services.php">Power Plant Operation and Maintenance</a></li>
+                  <li class="botnavborder"><a href="services.php">Current Contract</a></li>
+                  <li class="botnavborder"><a href="services.php#powerplant">Power Plant Operation and Maintenance</a></li>
                   <li class="botnavborder"><a href="services.php#gasturbine">Gas Turbine Management</a></li>
                   <li class="botnavborder"><a href="services.php#steamturbine">Steam Turbine Management</a></li>
                   <li class="botnavborder"><a href="services.php#hrsg">HRSG Management</a></li>
