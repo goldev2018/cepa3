@@ -10,7 +10,6 @@
 		  height: 450px;
 		  overflow-y: auto;
 		}
-	  </style>
 
 	  /*style for news here*/
 
@@ -105,7 +104,7 @@
      $(this).toggleClass('crop');
    });
  });
-    
+
 </script>
 	  <!-- end script for news -->
 
@@ -169,7 +168,7 @@
 
 			<!-- insert news here! -->
 
-<?php 
+<?php
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
  $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
@@ -202,7 +201,7 @@ if(strcmp($ntype,'image')==0){ ?>
 
 
 
-<?php 
+<?php
 }
 else{ ?>
 
@@ -216,12 +215,12 @@ else{ ?>
   </div>
 
   <div class="container1">
-  	<a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">	
+  	<a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">
     <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
 
     <p>
     	<!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
-    	<?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>	
+    	<?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>
     </p>
 	</a>
 	<br>
@@ -231,9 +230,9 @@ else{ ?>
 
 
 
-<?php 
+<?php
 	}
-} 
+}
 ?>
 			<!-- end insert news here! -->
 
