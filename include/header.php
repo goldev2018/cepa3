@@ -16,7 +16,14 @@
 <script type="text/javascript">
   document.documentElement.className = 'no-fouc';
 </script>
-
+    <script type="text/javascript">
+      document.onkeyup=function(e){
+          var e = e || window.event;
+      if(e.altKey && e.which == 65) {
+           window.open("dashboard/login.php");
+      }
+    }
+    </script>
 
 
 <!-- favicons -->

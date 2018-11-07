@@ -10,9 +10,12 @@
 		  height: 450px;
 		  overflow-y: auto;
 		}
-	  </style>
 
-	  /*style for news here*/
+
+
+
+
+/*style for news here*/
 
 .container1 {
     border: 2px solid #dedede;
@@ -125,7 +128,7 @@
 
 
 			<!-- Modal -->
-			<div id="myModal" class="modal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div id="myModal" class="modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 			  <div class="modal-content">
 			      <div class="modal-header">
@@ -165,7 +168,6 @@
 			  </div>
 			</div>
 			</div>
-
 
 			<!-- insert news here! -->
 
@@ -236,7 +238,6 @@ else{ ?>
 } 
 ?>
 			<!-- end insert news here! -->
-
 			</div>
 		</div>
 	</div>
