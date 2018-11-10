@@ -171,7 +171,7 @@
 <?php
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
- $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
+ $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id desc");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 // if ($row['newsroom_type']==="%image") {
