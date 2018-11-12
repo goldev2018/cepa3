@@ -69,7 +69,7 @@
 										<h3>ANNOUNCEMENTS</h3>
 										<div class="solidline"></div>
 										<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
-											<a href="newsroom.php"><p>Click here for future announcements</p></a>
+											<a href="announcements.php"><p>Click here for future announcements</p></a>
 										</div>
 									</div>
 
