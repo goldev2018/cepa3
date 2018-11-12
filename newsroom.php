@@ -145,7 +145,7 @@ if(strcmp($ntype,'image')==0){ ?>
   <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
 
     <div class="container1 darker">
-    <img src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
+    <img class="img-responsive" src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
   </div>
 
 
