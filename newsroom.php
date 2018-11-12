@@ -11,7 +11,7 @@
 		  overflow-y: auto;
 		}
 	  </style>
-
+<style type="text/css">
 	  /*style for news here*/
 
 .container1 {

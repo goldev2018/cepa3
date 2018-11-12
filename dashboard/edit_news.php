@@ -8,13 +8,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Cepa | Add News Room</title>
+  <title>Cepa | Edit/Delete News Room</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+
+
+<!-- for datatables -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="plugins/jquery.dataTables.css">
+ 
+<script type="text/javascript" charset="utf8" src="plugins/jquery.dataTables.js"></script>
+
+<script>
+$(document).ready(function() {
+    var table = $('#myTable').DataTable( {
+        scrollY:        "300px",
+        scrollX:        "1220px",
+        scrollCollapse: true,
+        // paging:         false,
+        columnDefs: [
+            { width: '5%', targets: 0 },
+            { width: '15%', targets: 1 },
+            // { width: '15%', targets: 2 },
+            // { width: '30%', targets: 3 },
+            // { width: '15%', targets: 4 },
+            // { width: '10%', targets: 5 },
+            // { width: '10%', targets: 6 },
+            // { width: '10%', targets: 7 },
+            // { width: '5%', targets: 8 }
+        ],
+        // fixedColumns: true
+    } );
+} );
+</script>
+ <!-- for datatables -->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -26,19 +57,40 @@
         <li class="breadcrumb-item">
           <a href="dashboard.php">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Upload News Room</li>
+        <li class="breadcrumb-item active">Update News Room</li>
       </ol>
       <div class="row">
         <div class="col-12">
-          <h1>Upload file here</h1>
+          <!-- <h1>Upload file here</h1> -->
           <!-- <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p> -->
           <center>
-            <form action="upload_newsChk.php" method="post" enctype="multipart/form-data">
+            <!-- <form action="upload_newsChk.php" method="post" enctype="multipart/form-data">
             <input type="text" name="newsroom_title" placeholder="News Room Title" size="99"><br><br>
             <textarea placeholder="News Room description here..." rows="10" cols="100" name="newsdesc"></textarea><br><br>
             <input type="file" name="filepdf"><br><br>
             <input type="submit" name="upload" value="Upload">
-            </form>
+            </form> -->
+
+            <table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data </td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data </td>
+        </tr>
+    </tbody>
+</table>
+
+
           </center>
         </div>
       </div>
@@ -69,12 +121,12 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <!-- <script src="js/sb-admin.min.js"></script> -->
   </div>
 </body>
 
