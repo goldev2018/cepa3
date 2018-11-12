@@ -32,10 +32,10 @@ $(document).ready(function() {
         // paging:         false,
         columnDefs: [
             { width: '5%', targets: 0 },
-            { width: '15%', targets: 1 },
-            // { width: '15%', targets: 2 },
-            // { width: '30%', targets: 3 },
-            // { width: '15%', targets: 4 },
+            { width: '10%', targets: 1 },
+            { width: '30%', targets: 2 },
+            { width: '5%', targets: 3 },
+            { width: '6%', targets: 4 },
             // { width: '10%', targets: 5 },
             // { width: '10%', targets: 6 },
             // { width: '10%', targets: 7 },
@@ -45,6 +45,15 @@ $(document).ready(function() {
     } );
 } );
 </script>
+<style type="text/css">
+  td.b {
+    /*white-space: nowrap; */
+    width: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    /*border: 1px solid #000000;*/
+}
+</style>
  <!-- for datatables -->
 </head>
 
@@ -61,32 +70,45 @@ $(document).ready(function() {
       </ol>
       <div class="row">
         <div class="col-12">
-          <!-- <h1>Upload file here</h1> -->
-          <!-- <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p> -->
           <center>
-            <!-- <form action="upload_newsChk.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="newsroom_title" placeholder="News Room Title" size="99"><br><br>
-            <textarea placeholder="News Room description here..." rows="10" cols="100" name="newsdesc"></textarea><br><br>
-            <input type="file" name="filepdf"><br><br>
-            <input type="submit" name="upload" value="Upload">
-            </form> -->
 
             <table id="myTable" class="display">
     <thead>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
+      <?php
+      include "config.php"; 
+       $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
+       $sql->execute();
+       while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+// id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
+       ?>
         <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data </td>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['newsroom_title']; ?></td>
+            <td><?php echo $row['newsroom_desc']; ?></td>
+            <?php 
+              $ntype = substr($row['newsroom_type'], 0, 5);
+              if(strcmp($ntype,'image')==0){ ?>
+
+            <td><?php echo '<img src="'.$row['newsroom_path'].'" height="50px" width="50px">' ?></td>
+            <?php }
+            else{
+             ?>
+
+            <td><?php echo $row['newsroom_type']; ?></td>
+
+            <?php } ?>
+            <td><a href="editnews.php?delete=<?php echo $row['id'];  ?>" onclick="return confirm('Are you sure?')">Edit</a> | <a href="deletenews.php?delete=<?php echo $row['id'];  ?>&link=<?php echo $row['newsroom_path'];  ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
         </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data </td>
-        </tr>
+        <?php } ?>
     </tbody>
 </table>
 

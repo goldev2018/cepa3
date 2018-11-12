@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include('include/header.php'); ?>
-	<style>
-	body {
-	      position: relative;
-	  }
-		.modal-body{
-		  height: 450px;
-		  overflow-y: auto;
-		}
-<<<<<<< HEAD
-	  </style>
-<style type="text/css">
-=======
+  <?php include('include/header.php'); ?>
+  <style>
+  body {
+        position: relative;
+    }
+    .modal-body{
+      height: 450px;
+      overflow-y: auto;
+    }
 
->>>>>>> 6bee6b2eafd1a09bf87663d2ccba68a0ac44c8b8
-	  /*style for news here*/
+
+
+
+
+/*style for news here*/
 
 .container1 {
     border: 2px solid #dedede;
@@ -46,7 +45,7 @@
 }*/
 
 .thumbnail{
-	 float: left;
+   float: left;
     max-width: 60px;
     width: 100%;
     margin-right: 20px;
@@ -97,9 +96,9 @@
 /*end style for news*/
 
 
-	  </style>
+    </style>
 
-	  <!-- script for news here! -->
+    <!-- script for news here! -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
@@ -109,44 +108,50 @@
      $(this).toggleClass('crop');
    });
  });
-
+    
 </script>
-	  <!-- end script for news -->
+    <!-- end script for news -->
 
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	<?php include('include/navigation2.php'); ?>
+  <?php include('include/navigation2.php'); ?>
 
 
 
+<section id="content">
+  <div class="container">
+    <div class="row" >
+      <div class="col-lg-8">
+      <h3>NEWSROOM</h3>
+      <div class="solidline"></div>
 
 
 
+      <!-- insert news here! -->
 
-
-
-
-
-<<<<<<< HEAD
-			<!-- insert news here! -->
-
-<?php
+<?php 
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
- $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id desc");
+ $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+$email = $row['email'];
+ $sql1    = $db->prepare("SELECT * FROM login WHERE email='$email'");
+$sql1->execute();
+$row1 = $sql1->fetch(PDO::FETCH_ASSOC);
+
 // if ($row['newsroom_type']==="%image") {
-	$ntype = substr($row['newsroom_type'], 0, 5);
+  $ntype = substr($row['newsroom_type'], 0, 5);
 if(strcmp($ntype,'image')==0){ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
 
     <div class="container1 darker">
-    <img src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
+    <img class="img-responsive" src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
   </div>
 
 
@@ -164,13 +169,13 @@ if(strcmp($ntype,'image')==0){ ?>
 
 
 
-<?php
+<?php 
 }
 else{ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
   <p><?php echo "<h3>Clean energy is cheap, surging - and header for a fall</h3>"; ?></p>
   <div class="container1">
     <p id="test" class="crop">Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
@@ -178,85 +183,78 @@ else{ ?>
   </div>
 
   <div class="container1">
-  	<a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">
+    <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  
     <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
 
     <p>
-    	<!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
-    	<?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>
+      <!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
+      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>  
     </p>
-	</a>
-	<br>
+  </a>
+  <br>
   </div>
   <!-- <span class="time-right"><?php echo $row1["hd_info_date"]; ?></span> -->
 </div>
 
 
 
-<?php
-	}
-}
+<?php 
+  }
+} 
 ?>
-			<!-- end insert news here! -->
+      <!-- end insert news here! -->
 
-=======
-<section id="content">
-			<div class="container animated fadeIn">
-							 <div class="row">
-								 <div class="col-lg-12">
-								 <div class="col-sm-8 col-lg-8">
-									 <h3>NEWSROOM</h3>
-									 <div class="solidline"></div>
-								 	<div class="row"><!-- CONTENT --></div>
 
-								 </div>
+      </div>
 
-									<div class="col-sm-4">
-										<h3>ANNOUNCEMENTS</h3>
-										<div class="solidline"></div>
-										<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
-											<a href="announcements.php"><p>Click here for future announcements</p></a>
-										</div>
-									</div>
 
-									<div class="col-sm-4" style="float: right">
-										<h3>CONTACT US</h3>
-										<div class="solidline"></div>
-										<Address>
- 				 							<!-- <i class="glyphicon glyphicon-home"></i> -->
-											<div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
- 				 							<i class="glyphicon glyphicon-map-marker accent"></i>
-											</div>
-											<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
 
-												Registered Address – <br>
-												Hazelwood Gregory Lane,<br>
-												Durley, Southampton,<br>
-												United Kingdom, SO32 2BS<br>
-												<br>
-												Hong Kong Address - <br>
-												Suite 4823, 48th Floor,<br>
-												Sun Hung Kai Centre, 30 Harbour Road,<br>
-												Hong Kong<br><br>
 
-											</div>
+<div class="col-sm-4">
+                    <h3>ANNOUNCEMENTS</h3>
+                    <div class="solidline"></div>
+                    <div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
+                      <a href="announcements.php"><p>Click here for future announcements</p></a>
+                    </div>
+                  </div>
 
-											<div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
- 				 							<i class="glyphicon glyphicon-earphone accent"></i>
-											</div>
-											<div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
- 				 							(852) 2861 0719
-											</div>
+                  <div class="col-sm-4" style="float: right">
+                    <h3>CONTACT US</h3>
+                    <div class="solidline"></div>
+                    <Address>
+                      <!-- <i class="glyphicon glyphicon-home"></i> -->
+                      <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
+                      <i class="glyphicon glyphicon-map-marker accent"></i>
+                      </div>
+                      <div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
 
-											<!-- <p><i class="glyphicon glyphicon-earphone"></i>&nbsp;(+632) 831 8855 </p> -->
-										</address>
-									</div>
+                        Registered Address – <br>
+                        Hazelwood Gregory Lane,<br>
+                        Durley, Southampton,<br>
+                        United Kingdom, SO32 2BS<br>
+                        <br>
+                        Hong Kong Address - <br>
+                        Suite 4823, 48th Floor,<br>
+                        Sun Hung Kai Centre, 30 Harbour Road,<br>
+                        Hong Kong<br><br>
 
-								</div>
-					</div>
->>>>>>> master
-			</div>
-		</section>
+                      </div>
+
+                      <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
+                      <i class="glyphicon glyphicon-earphone accent"></i>
+                      </div>
+                      <div class="col-xs-11 col-sm-10 col-md-10 col-lg-10">
+                      (852) 2861 0719
+                      </div>
+
+                      <!-- <p><i class="glyphicon glyphicon-earphone"></i>&nbsp;(+632) 831 8855 </p> -->
+                    </address>
+                  </div>
+
+
+    </div>
+  </div>
+</section>
 
 
 </body>
