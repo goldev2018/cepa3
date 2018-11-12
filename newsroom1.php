@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include('include/header.php'); ?>
-	<style>
-	body {
-	      position: relative;
-	  }
-		.modal-body{
-		  height: 450px;
-		  overflow-y: auto;
-		}
+  <?php include('include/header.php'); ?>
+  <style>
+  body {
+        position: relative;
+    }
+    .modal-body{
+      height: 450px;
+      overflow-y: auto;
+    }
 
 
 
@@ -45,7 +45,7 @@
 }*/
 
 .thumbnail{
-	 float: left;
+   float: left;
     max-width: 60px;
     width: 100%;
     margin-right: 20px;
@@ -96,9 +96,9 @@
 /*end style for news*/
 
 
-	  </style>
+    </style>
 
-	  <!-- script for news here! -->
+    <!-- script for news here! -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
@@ -110,25 +110,25 @@
  });
     
 </script>
-	  <!-- end script for news -->
+    <!-- end script for news -->
 
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	<?php include('include/navigation2.php'); ?>
+  <?php include('include/navigation2.php'); ?>
 
 
 
 <section id="content">
-	<div class="container">
-		<div class="row" >
-			<div class="col-lg-8">
-			<h3>NEWSROOM</h3>
-			<div class="solidline"></div>
+  <div class="container">
+    <div class="row" >
+      <div class="col-lg-8">
+      <h3>NEWSROOM</h3>
+      <div class="solidline"></div>
 
 
 
-			<!-- insert news here! -->
+      <!-- insert news here! -->
 
 <?php 
 include 'dashboard/config.php';
@@ -136,16 +136,22 @@ include 'dashboard/config.php';
  $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+$email = $row['email'];
+ $sql1    = $db->prepare("SELECT * FROM login WHERE email='$email'");
+$sql1->execute();
+$row1 = $sql1->fetch(PDO::FETCH_ASSOC);
+
 // if ($row['newsroom_type']==="%image") {
-	$ntype = substr($row['newsroom_type'], 0, 5);
+  $ntype = substr($row['newsroom_type'], 0, 5);
 if(strcmp($ntype,'image')==0){ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
 
     <div class="container1 darker">
-    <img src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
+    <img class="img-responsive" src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
   </div>
 
 
@@ -168,8 +174,8 @@ if(strcmp($ntype,'image')==0){ ?>
 else{ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
   <p><?php echo "<h3>Clean energy is cheap, surging - and header for a fall</h3>"; ?></p>
   <div class="container1">
     <p id="test" class="crop">Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
@@ -177,15 +183,15 @@ else{ ?>
   </div>
 
   <div class="container1">
-  	<a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">	
+    <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  
     <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
 
     <p>
-    	<!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
-    	<?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>	
+      <!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
+      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>  
     </p>
-	</a>
-	<br>
+  </a>
+  <br>
   </div>
   <!-- <span class="time-right"><?php echo $row1["hd_info_date"]; ?></span> -->
 </div>
@@ -193,13 +199,13 @@ else{ ?>
 
 
 <?php 
-	}
+  }
 } 
 ?>
-			<!-- end insert news here! -->
+      <!-- end insert news here! -->
 
 
-			</div>
+      </div>
 
 
 
@@ -246,8 +252,8 @@ else{ ?>
                   </div>
 
 
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
 
 
