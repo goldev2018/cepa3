@@ -104,17 +104,20 @@
 									<td>1999</td>
 								</tr>
 								<tr>
-									<td></td>
-									<th>We build & Operate – Management Track Record for a Previous Incorporation of CEPA</th>
-								<td></td>
-								<td></td>
-								</tr>
-								<tr>
 										<th>Previous Plants Completed</th>
 										<td></td>
-										<th>6515 MW</th>
+										<th>6615 MW</th>
 										<td></td>
 								</tr>
+							</tbody>
+							<tbody>
+								<tr>
+									<td></td>
+									<th><h4 class="fontaccent">Current Projects</h4></th>
+								<td></td>
+								<td></td>
+								</tr>
+								
 								<tr>
 									<td>Sengkang<br>135 + 180 MW Gas-Fired Power Plant</td>
 									<td>Indonesia</td>
