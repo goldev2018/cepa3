@@ -136,13 +136,19 @@ include 'dashboard/config.php';
  $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+$email = $row['email'];
+ $sql1    = $db->prepare("SELECT * FROM login WHERE email='$email'");
+$sql1->execute();
+$row1 = $sql1->fetch(PDO::FETCH_ASSOC);
+
 // if ($row['newsroom_type']==="%image") {
   $ntype = substr($row['newsroom_type'], 0, 5);
 if(strcmp($ntype,'image')==0){ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
 
     <div class="container1 darker">
     <img class="img-responsive" src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
@@ -168,8 +174,8 @@ if(strcmp($ntype,'image')==0){ ?>
 else{ ?>
 
 <div class="container1 darker">
-  <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-  <p><?php echo "<h5>John Doe, Engineer</h5>October 31, 2018"; ?></p><br>
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
   <p><?php echo "<h3>Clean energy is cheap, surging - and header for a fall</h3>"; ?></p>
   <div class="container1">
     <p id="test" class="crop">Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
