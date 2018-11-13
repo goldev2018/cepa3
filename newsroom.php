@@ -158,11 +158,9 @@ if(strcmp($ntype,'image')==0){ ?>
 
   $img=base64_encode($row1['image']);
    ?>
-<<<<<<< HEAD
-    ?><img src="data:image/jpg;charset=utf8;base64,<?php echo $img ?>" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>
-=======
+
     <img src="data:image/jpg;charset=utf8;base64,<?php echo $img ?>" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>
->>>>>>> 3f3e0b6fcd1c1f843adb404a70b3e2ecadcc1cd9
+
     <?php } ?>
   <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
 
