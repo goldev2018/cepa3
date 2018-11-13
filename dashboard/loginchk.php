@@ -58,7 +58,7 @@ $password=$_POST['password'];
 		//// Checking userid and password //////
 		$msg='';
 
-		$count=$db->prepare("select * from login where email=:email");
+		$count=$db->prepare("SELECT * FROM login WHERE email=:email");
 		$count->bindParam(":email",$email,PDO::PARAM_STR);
 
 		if($count->execute()){
@@ -75,6 +75,7 @@ $password=$_POST['password'];
 				// Start session n redirect to last page
 				$_SESSION['userid']=$row->email;
 				$_SESSION['fullname']=$row->fullname;
+				$_SESSION['usertype']=$row->usertype;
 				//echo " Inside session  ". $_SESSION['userid'];
 
 				echo "<img src='images/ajax-loader (2).gif'>";

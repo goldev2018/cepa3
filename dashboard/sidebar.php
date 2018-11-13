@@ -69,7 +69,11 @@
 
 
 
-
+<?php 
+if ($_SESSION['usertype']=="superadmin") {
+echo "<a href='adduser.php'>Add User</a>";
+}
+ ?>
 
 
 
