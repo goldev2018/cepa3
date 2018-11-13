@@ -106,7 +106,7 @@ $(document).ready(function() {
             <td><?php echo $row['newsroom_type']; ?></td>
 
             <?php } ?>
-            <td><a href="editnews.php?delete=<?php echo $row['id'];  ?>" onclick="return confirm('Are you sure?')">Edit</a> | <a href="deletenews.php?delete=<?php echo $row['id'];  ?>&link=<?php echo $row['newsroom_path'];  ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+            <td><a href="editnews.php?edit=<?php echo $row['id'];  ?>" onclick="return confirm('Are you sure?')">Edit</a> | <a href="deletenews.php?delete=<?php echo $row['id'];  ?>&link=<?php echo $row['newsroom_path'];  ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
         </tr>
         <?php } ?>
     </tbody>
