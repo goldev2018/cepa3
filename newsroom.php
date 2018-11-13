@@ -133,7 +133,7 @@
 <?php 
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
- $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id ASC");
+ $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id DESC");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 $email = $row['email'];
@@ -147,7 +147,19 @@ if(strcmp($ntype,'image')==0){ ?>
 
 <div class="container1 darker">
   <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
-  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <?php 
+  // echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; 
+
+  if (empty($row1['image'])) {?>
+   <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
+   <?php 
+  }
+  else{
+
+  $img=base64_encode($row1['image']);
+   ?>
+    ?><img src="data:image/jpg;charset=utf8;base64,<?php echo $img ?>" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>
+    <?php } ?>
   <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
 
     <div class="container1 darker">
@@ -156,10 +168,9 @@ if(strcmp($ntype,'image')==0){ ?>
 
 
 
-  <p><?php echo "<h3>Clean energy is cheap, surging - and header for a fall</h3>"; ?></p>
+  <p><?php echo "<h3>".$row['newsroom_title']."</h3>"; ?></p>
   <div class="container1">
-    <p id="test" class="crop">Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-  book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+    <p id="test" class="crop"><?php echo $row['newsroom_desc']; ?></p>
   </div>
 
 
@@ -176,11 +187,15 @@ else{ ?>
 <div class="container1 darker">
   <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
   <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
-  <p><?php echo "<h3>Clean energy is cheap, surging - and header for a fall</h3>"; ?></p>
+
+
+    <p><?php echo "<h3>".$row['newsroom_title']."</h3>"; ?></p>
   <div class="container1">
-    <p id="test" class="crop">Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-  book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+    <p id="test" class="crop"><?php echo $row['newsroom_desc']; ?></p>
   </div>
+
+
+
 
   <div class="container1">
     <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  

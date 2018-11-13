@@ -75,6 +75,7 @@ $password=$_POST['password'];
 				// Start session n redirect to last page
 				$_SESSION['userid']=$row->email;
 				$_SESSION['fullname']=$row->fullname;
+				$_SESSION['usertype']=$row->usertype;
 				//echo " Inside session  ". $_SESSION['userid'];
 
 				echo "<img src='images/ajax-loader (2).gif'>";
