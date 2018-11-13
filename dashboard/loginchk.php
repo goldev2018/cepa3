@@ -58,7 +58,7 @@ $password=$_POST['password'];
 		//// Checking userid and password //////
 		$msg='';
 
-		$count=$db->prepare("select * from login where email=:email");
+		$count=$db->prepare("SELECT * FROM login WHERE email=:email");
 		$count->bindParam(":email",$email,PDO::PARAM_STR);
 
 		if($count->execute()){
