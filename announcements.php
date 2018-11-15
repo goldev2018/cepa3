@@ -59,7 +59,22 @@
 			</div>
 <!-- END MODAL -->
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	<?php include('include/navigation2.php'); ?>
+
+	<div id="parallax_announce" class="parallax text-light" data-stellar-background-ratio="0.5">
+	 <div class="container">
+
+
+
+				 <div class="col-lg-12">
+					 <?php include('include/navigation.php'); ?>
+					 <div class="row" style="margin-top:100px">
+						 <img src="img/parallax/header_logo.svg" style="height:76px"  class="img-responsive" alt="logo"/>
+
+					 </div>
+
+				 </div>
+	 </div>
+ </div>
 
 
 
@@ -71,7 +86,7 @@
 			<div class="solidline"></div>
 
 
-			
+
 
 
 			</div>

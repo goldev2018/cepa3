@@ -108,14 +108,30 @@
      $(this).toggleClass('crop');
    });
  });
-    
+
 </script>
     <!-- end script for news -->
 
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-  <?php include('include/navigation2.php'); ?>
+
+  <!-- parallax  -->
+	 <div id="parallax_news" class="parallax text-light" data-stellar-background-ratio="0.5">
+		<div class="container">
+
+
+
+					<div class="col-lg-12">
+						<?php include('include/navigation.php'); ?>
+						<div class="row" style="margin-top:100px">
+							<img src="img/parallax/header_logo.svg" style="height:76px"  class="img-responsive" alt="logo"/>
+
+						</div>
+
+					</div>
+		</div>
+	</div>
 
 
 
@@ -130,7 +146,7 @@
 
       <!-- insert news here! -->
 
-<?php 
+<?php
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
  $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id DESC");
@@ -147,12 +163,12 @@ if(strcmp($ntype,'image')==0){ ?>
 
 <div class="container1 darker">
   <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
-  <?php 
-  // echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; 
+  <?php
+  // echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>';
 
   if (empty($row1['image'])) {?>
    <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-   <?php 
+   <?php
   }
   else{
 
@@ -182,7 +198,7 @@ if(strcmp($ntype,'image')==0){ ?>
 
 
 
-<?php 
+<?php
 }
 else{ ?>
 
@@ -200,12 +216,12 @@ else{ ?>
 
 
   <div class="container1">
-    <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  
+    <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">
     <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
 
     <p>
       <!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
-      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>  
+      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>
     </p>
   </a>
   <br>
@@ -215,9 +231,9 @@ else{ ?>
 
 
 
-<?php 
+<?php
   }
-} 
+}
 ?>
       <!-- end insert news here! -->
 
