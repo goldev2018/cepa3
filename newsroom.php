@@ -149,7 +149,7 @@
 <?php 
 include 'dashboard/config.php';
 // id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
- $sql    = $db->prepare("SELECT * FROM newsroom ORDER BY id DESC");
+ $sql    = $db->prepare("SELECT * FROM newsroom WHERE if_newsroom='0' ORDER BY id DESC");
 $sql->execute();
 while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 $email = $row['email'];

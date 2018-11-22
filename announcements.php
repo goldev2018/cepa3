@@ -89,6 +89,107 @@
 
 
 
+  <!-- insert news here! -->
+
+<?php 
+include 'dashboard/config.php';
+// id, newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime
+ $sql    = $db->prepare("SELECT * FROM newsroom WHERE if_newsroom='1' ORDER BY id DESC");
+$sql->execute();
+while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+$email = $row['email'];
+ $sql1    = $db->prepare("SELECT * FROM login WHERE email='$email'");
+$sql1->execute();
+$row1 = $sql1->fetch(PDO::FETCH_ASSOC);
+
+// if ($row['newsroom_type']==="%image") {
+  $ntype = substr($row['newsroom_type'], 0, 5);
+if(strcmp($ntype,'image')==0){ ?>
+
+<div class="container1 darker">
+  <!-- <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"> -->
+  <?php 
+  // echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; 
+
+  if (empty($row1['image'])) {?>
+   <img src="img/images/default.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
+   <?php 
+  }
+  else{
+
+  $img=base64_encode($row1['image']);
+   ?>
+    <img src="data:image/jpg;charset=utf8;base64,<?php echo $img ?>" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>
+    <?php } ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
+
+    <div class="container1 darker">
+    <img class="img-responsive" src="<?php echo "dashboard/".$row['newsroom_path']; ?>">
+  </div>
+
+
+
+  <p><?php echo "<h3>".$row['newsroom_title']."</h3>"; ?></p>
+  <div class="container1">
+    <p id="test" class="crop"><?php echo $row['newsroom_desc']; ?></p>
+  </div>
+
+
+  <!-- <span class="time-right"><?php echo $row1["hd_info_date"]; ?></span> -->
+</div>
+
+
+
+
+<?php 
+}
+else{ ?>
+
+<div class="container1 darker">
+  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
+  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
+
+
+    <p><?php echo "<h3>".$row['newsroom_title']."</h3>"; ?></p>
+  <div class="container1">
+    <p id="test" class="crop"><?php echo $row['newsroom_desc']; ?></p>
+  </div>
+
+
+
+
+  <div class="container1">
+    <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  
+    <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
+
+    <p>
+      <!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
+      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>  
+    </p>
+  </a>
+  <br>
+  </div>
+  <!-- <span class="time-right"><?php echo $row1["hd_info_date"]; ?></span> -->
+</div>
+
+
+
+<?php 
+  }
+} 
+?>
+      <!-- end insert news here! -->
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 		</div>
 	</div>

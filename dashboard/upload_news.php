@@ -36,6 +36,11 @@
             <form action="upload_newsChk.php" method="post" enctype="multipart/form-data">
             <input type="text" name="newsroom_title" placeholder="News Room Title" size="99"><br><br>
             <textarea placeholder="News Room description here..." rows="10" cols="100" name="newsdesc"></textarea><br><br>
+            <select name="cmbPage" required="">
+              <option value="" disabled="true" selected="true">--Select page to post--</option>
+              <option value="0">News Room</option>
+              <option value="1">Announcement</option>
+            </select><br><br>
             <input type="file" name="filepdf"><br><br>
             <input type="submit" name="upload" value="Upload">
             </form>

@@ -41,9 +41,10 @@ $ext = $path_parts['basename'];
 	date_default_timezone_set("Asia/Manila");
 	$datetime = date("g:ia  l jS F Y");
 	$newsdesc = $_POST['newsdesc'];
-	$newsroom_title = $_POST['newsroom_title'];
+  $newsroom_title = $_POST['newsroom_title'];
+  $cmbPage = $_POST['cmbPage'];
 	$newsroom_type = $_FILES["filepdf"]["type"];
-	$sql = $db->prepare("INSERT INTO newsroom (newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime) VALUES ('$newsfile', '$newsdesc', '$newsroom_title', '$newsroom_type', '$email', '$datetime')");
+	$sql = $db->prepare("INSERT INTO newsroom (newsroom_path, newsroom_desc, newsroom_title, newsroom_type, email, newsroom_datetime, if_newsroom) VALUES ('$newsfile', '$newsdesc', '$newsroom_title', '$newsroom_type', '$email', '$datetime', '$cmbPage')");
 	if ($sql->execute()) {
 echo "<script>alert('Post Successfully.')</script>";
 		header("location: upload_news.php");
