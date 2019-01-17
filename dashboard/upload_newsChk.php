@@ -25,8 +25,10 @@ $path_parts = pathinfo($file1);
 
 $ext = $path_parts['basename'];
 
+$path123 = $_FILES['filepdf']['name'];
+$ext123 = pathinfo($path123, PATHINFO_EXTENSION);
 
-     $newsfile = 'newsroomfiles/'.$filename.'.'.$ext.'';
+     $newsfile = 'newsroomfiles/'.$filename.'.'.$ext123.'';
      if(!copy($file,$newsfile))
      {
          echo "failed to copy $file";

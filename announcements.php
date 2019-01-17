@@ -146,8 +146,12 @@ if(strcmp($ntype,'image')==0){ ?>
 else{ ?>
 
 <div class="container1 darker">
-  <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>'; ?>
-  <p><?php echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; ?></p><br>
+  <?php
+  // echo '<img src="data:image/jpeg;base64,'.base64_encode( $row1['image'] ).'" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"/>';
+  ?>
+  <p><?php
+  // echo "<h5>".$row1['fullname'].", ".$row1['position']."</h5>".$row['newsroom_datetime']; 
+  ?></p><br>
 
 
     <p><?php echo "<h3>".$row['newsroom_title']."</h3>"; ?></p>
@@ -160,12 +164,7 @@ else{ ?>
 
   <div class="container1">
     <a href="<?php echo "dashboard/".$row['newsroom_path']; ?>">  
-    <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;">
-
-    <p>
-      <!-- <?php echo "<h4>EWC-AVP_Layout_SCN_10A-v2.ai<h4>"; ?> -->
-      <?php echo "<h4>".str_replace("newsroomfiles/", "", $row['newsroom_path'])."</h4>"; ?>  
-    </p>
+    <img src="img/images/Download-Icon.png" alt="Avatar" style="border-radius: 50%;float:left;max-width: 60px;width: 100%;margin-right: 20px;"><br><font size="3px">Download</font>
   </a>
   <br>
   </div>
